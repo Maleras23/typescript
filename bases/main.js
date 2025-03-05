@@ -1,100 +1,74 @@
 "use strict";
 (() => {
-    class Mutante {
-        constructor(name, realName) {
+    let flash = {
+        name: 'Barry Allen',
+        age: 24,
+        powers: ['Super velocidad', 'Viajar en el tiempo']
+    };
+    let superman = {
+        name: 'Clark Kent',
+        age: 60,
+        powers: ['Super velocidad'],
+        getNombre() {
+            return this.name;
+        }
+    };
+    console.log(flash);
+})();
+(() => {
+    class Mutant {
+        constructor(age, name, realName) {
+            this.age = age;
             this.name = name;
             this.realName = realName;
         }
-    }
-    class Xmen extends Mutante {
-        salvarMundo() {
-            return 'Mundo a salvo!';
+        mutantPower(id) {
+            return this.name + ' ' + this.realName;
         }
     }
-    class Villian extends Mutante {
-        conquistarMundo() {
-            return 'Mundo consquistado';
-        }
-    }
-    const wolverine = new Xmen('Wolverine', 'Logan');
-    const magneto = new Villian('Magneto', 'Magnus');
-    const printName = (character) => {
-        console.log(character.realName);
+    const catWoman = new Mutant(23, 'Catwoman', 'Sara');
+    console.log(catWoman.mutantPower(23));
+    const persona = {
+        age: 2,
+        sexo: 'm'
     };
 })();
 (() => {
-    class Avenger {
-        constructor(name, team, realName) {
-            this.name = name;
-            this.team = team;
-            this.realName = realName;
+    const client = {
+        name: 'Fernando',
+        age: 25,
+        address: {
+            id: 125,
+            zip: 'KY2 SUD',
+            city: 'Ottawa'
+        },
+        getFullAddress(id) {
+            return this.address.city;
         }
-    }
-    Avenger.avgAge = 35;
-    class Avenger2 {
-        static getAvgAge() {
-            return this.name;
+    };
+    const client2 = {
+        name: 'Carlos',
+        age: 38,
+        address: {
+            city: 'Toronto',
+            id: 120,
+            zip: 'K25 U2A'
+        },
+        getFullAddress(id) {
+            return this.address.city;
         }
-        constructor(name, team, realName) {
-            this.name = name;
-            this.team = team;
-            this.realName = realName;
-        }
-        bio() {
-            return `${this.name} (${this.team})`;
-        }
-    }
-    Avenger2.avgAge = 55;
+    };
 })();
 (() => {
-    class Avenger {
-        constructor(name, realName) {
-            this.name = name;
-            this.realName = realName;
-        }
-        getFullname() {
-            return `${this.name} ${this.realName}`;
-        }
-    }
-    class Xmen extends Avenger {
-        constructor(name, realName, isMutant) {
-            super(name, realName);
-            this.isMutant = isMutant;
-        }
-        get fullName() {
-            return `${this.name} - ${this.realName}`;
-        }
-        set fullName(name) {
-            if (name.length < 3) {
-                throw new Error('El nombre debe ser mayor de 3 letras');
-            }
-            this.name = name;
-        }
-        getFullnameDesdexmen() {
-            console.log(super.getFullname());
-        }
-    }
-    const wolverine = new Xmen('Wolverine', 'Logan', true);
-})();
-(() => {
-    class Apocalipsis {
-        constructor(name) {
-            this.name = name;
-        }
-        static callApocalipsis() {
-            if (!Apocalipsis.instance) {
-                Apocalipsis.instance = new Apocalipsis('Soy apocalipsis el unico');
-            }
-            return Apocalipsis.instance;
-        }
-        changeName(newName) {
-            this.name = newName;
-        }
-    }
-    const apocalipsis = Apocalipsis.callApocalipsis();
-    const apocalipsis1 = Apocalipsis.callApocalipsis();
-    const apocalipsis2 = Apocalipsis.callApocalipsis();
-    apocalipsis.changeName('Carlos');
-    console.log(apocalipsis, apocalipsis1, apocalipsis2);
+    let sumar;
+    sumar = (a, b) => {
+        return a + b;
+    };
+    let restar;
+    restar = (a, b) => {
+        return a - b;
+    };
+    console.log(sumar(2, 4));
+    console.log(restar(2, 4));
 })();
 //# sourceMappingURL=main.js.map

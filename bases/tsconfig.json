@@ -114,6 +114,6 @@
   ],
 
   "include": [
-    "classes"
+    "interfaces"
   ]
 }
