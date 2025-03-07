@@ -114,6 +114,6 @@
   ],
 
   "include": [
-    "interfaces"
+    "namespaces"
   ]
 }
